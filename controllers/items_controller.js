@@ -3,16 +3,15 @@ var ItemModel = require('../models/item.js')
 
 class Item {
 
-	static create(req,res) {
+	static upload(req,res) {
 		var dataItem = {
-			image:req.body.image,
+			image:req.file.cloudStoragePublicUrl,
 			title:req.body.title,
-			price:req.body.price,
-			quantity:req.body.quantity
+			price:req.body.price
 		}
 		ItemModel.create(dataItem)
 		.then(dataItem=>{
-			res.status(200).json({message:"user created", dataItem})
+			res.status(200).json({message:"item created", dataItem})
 		})
 		.catch(err=>{
 			res.status(500).json({message:err.message})
@@ -29,9 +28,8 @@ class Item {
 		})
 	}
 
-	static update(req,res) {
-		
-	}
+
+
 
 }
 
