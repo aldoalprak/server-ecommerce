@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken')
 class Item {
 
 	static upload(req,res) {
-		const decoded = jwt.verify(req.headers.token,"helloworld123")
+		const decoded = jwt.verify(req.headers.token,process.env.JWT_SALT)
 		var dataItem = {
 			image:req.file.cloudStoragePublicUrl,
 			title:req.body.title,

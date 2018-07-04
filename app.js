@@ -3,9 +3,15 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
+require('dotenv').config()
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://ecommerce:rotitawarmanis12@ds247670.mlab.com:47670/ecommerce');
+mongoose.connect(`mongodb://${process.env.DB_USER}:${process.env.DB_PASS}@ds247670.mlab.com:47670/ecommerce`,function(err){
+  if(err) {
+    console.log(err);
+  }else{
+    console.log("db connected")
+  }
+});
 
 
 var indexRouter = require('./routes/index');
