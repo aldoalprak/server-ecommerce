@@ -1,0 +1,8 @@
+runtime: nodejs10
+env_variables: 
+  DB_USER: "aldo.alprak"
+  DB_PASS: "anakinskywalk3r"
+  PORT: "3000"
+  JWT_SALT: "helloworld"
+  CLOUD_BUCKET: "friendly-brand-280313.appspot.com"
+  GCLOUD_PROJECT: "friendly-brand-280313"
