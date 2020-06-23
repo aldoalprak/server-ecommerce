@@ -7,7 +7,7 @@ const CLOUD_BUCKET = process.env.CLOUD_BUCKET
 
 const storage = Storage({
   projectId: process.env.GCLOUD_PROJECT,
-  keyFilename: process.env.KEYFILE_PATH
+  keyFilename: './helper/key.json'
 })
 const bucket = storage.bucket(CLOUD_BUCKET)
 

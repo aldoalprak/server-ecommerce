@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 require('dotenv').config()
 const mongoose = require('mongoose');
-mongoose.connect(`mongodb://${process.env.DB_USER}:${process.env.DB_PASS}@ds247670.mlab.com:47670/ecommerce`,function(err){
+mongoose.connect(`mongodb://${process.env.DB_USER}:${process.env.DB_PASS}@ds145892.mlab.com:45892/ecommerce-db`,function(err){
   if(err) {
     console.log(err);
   }else{
